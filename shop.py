@@ -1,5 +1,6 @@
 import os
 
+
 class Product:
   ID = 1001
   def __init__(self, name, count, price):
@@ -108,12 +109,12 @@ class DB:
   def save_to_file(self):
     print("\nSaving data to file")
     print("-------------")
-    filename = "products.csv"
+    filename = "items.csv"
     with open(filename, "w+") as file:
       for p in self.products:
         text = f"{p.name},{p.count},{p.price}\n"
         file.write(text)
-    return "\nSaved successfully.\nFile: products.csv"
+    return "\nSaved successfully.\nFile: {filename}"
 
   def start_server(self, message=""):
     if message:
